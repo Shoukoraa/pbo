@@ -1,31 +1,13 @@
 <?php
 
 class LuasLingkaran {
-
     public const phi = 3.14;
     public int $jari;
-    
-    public function __construct($isiJari = 1) {
-        $this->jari = $isiJari;
-    }
-
-    public function tampil($nama = 'ban') {
-        $rumus = LuasLingkaran::phi * ($this->jari * $this->jari);
-        echo "Lingkaran {$nama} hasilnya adalah: {$rumus}";
-    }
-
-    public static function testing() {
-        echo "<br/>";
-        echo "ini dari static";
-    }
-
-    public function __destruct() {
-        echo "<br/>";
-        echo "ini dari destructor";
-    }
 }
 
-$lingkaran = new LuasLingkaran(10);
-$lingkaran->tampil('roda'); //panggil method tampil
+$lingkaran = new LuasLingkaran();
+$lingkaran->jari = 7;
 
-LuasLingkaran::testing(); //panggil static method
+$rumus = LuasLingkaran::phi * $lingkaran->jari * $lingkaran->jari;
+echo 'hasilnya adalah'. $rumus;
+?>
