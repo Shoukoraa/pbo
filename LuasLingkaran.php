@@ -1,13 +1,27 @@
 <?php
 
 class LuasLingkaran {
-    public const phi = 3.14;
-    public int $jari;
+
+    const PHI = 3.14;
+
+    public $jari;
+
+    public function tampil($nama = 'ban') {
+        $rumus = LuasLingkaran::PHI * ($this->jari * $this->jari);
+        echo "Lingkaran {$nama} ini hasilnya adalah: {$rumus}";
+    }
+
+    public static function testing() {
+        echo "</br>";
+        echo "ini testing static";
+    }
+
 }
 
 $lingkaran = new LuasLingkaran();
-$lingkaran->jari = 7;
+$lingkaran->jari = 10; //input nilai jari jari
+$lingkaran->tampil(); //tampilkan luas lingkaran
 
-$rumus = LuasLingkaran::phi * $lingkaran->jari * $lingkaran->jari;
-echo 'hasilnya adalah'. $rumus;
-?>
+LuasLingkaran::testing(); //memanggil method static
+//$rumus = Luaslingkaran::phi * ($lingkaran->jari * $lingkaran->jari);
+//echo "hasilnya adalah :", $rumus;
